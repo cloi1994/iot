@@ -149,7 +149,7 @@ def runDectection():
 
                 print ("new frame")
 
-                time.sleep(3)
+                time.sleep(8)
 
                 print ('capture')
 
@@ -189,9 +189,9 @@ def runDectection():
                                         sendOperation(cur_time,cur_time_sec)
                                         break
                                     else:
-                                        sendOperation(cur_time,cur_time_sec,True)
-                                        print ('match')
 
+                                        print ('match')
+                                sendOperation(cur_time,cur_time_sec,True)
                             else:
                                 sendOperation(cur_time,cur_time_sec,True)
             except KeyboardInterrupt:
