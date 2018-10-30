@@ -182,16 +182,17 @@ def runDectection():
                                               TargetImage={"Bytes": target_64},
                     	                     SimilarityThreshold=80
                     	                     )
+                                match = False
                                 for match in response['FaceMatches']:
 
                                     if match['Similarity'] > 0.9:
-                                        print ('detect')
+                                        match = True
                                         sendOperation(cur_time,cur_time_sec)
                                         break
                                     else:
-
                                         print ('match')
-                                sendOperation(cur_time,cur_time_sec,True)
+                                if match == False:
+                                    sendOperation(cur_time,cur_time_sec,True)
                             else:
                                 sendOperation(cur_time,cur_time_sec,True)
             except KeyboardInterrupt:
